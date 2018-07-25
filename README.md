@@ -1,7 +1,8 @@
 # Rails Push Notifications
-[![Build Status](https://travis-ci.org/calonso/rails-push-notifications.svg)](https://travis-ci.org/calonso/rails-push-notifications) [![Code Climate](https://codeclimate.com/github/calonso/rails-push-notifications/badges/gpa.svg)](https://codeclimate.com/github/calonso/rails-push-notifications) [![Test Coverage](https://codeclimate.com/github/calonso/rails-push-notifications/badges/coverage.svg)](https://codeclimate.com/github/calonso/rails-push-notifications/coverage)
+<!-- [![Build Status](https://travis-ci.org/calonso/rails-push-notifications.svg)](https://travis-ci.org/calonso/rails-push-notifications) [![Code Climate](https://codeclimate.com/github/calonso/rails-push-notifications/badges/gpa.svg)](https://codeclimate.com/github/calonso/rails-push-notifications) [![Test Coverage](https://codeclimate.com/github/calonso/rails-push-notifications/badges/coverage.svg)](https://codeclimate.com/github/calonso/rails-push-notifications/coverage) -->
 ## Professional iOS, Android and Windows Phone push notifications for Ruby on Rails
 
+FcmRailsPushNotifications is build on top of RailsPushNotifications for supporting FCM.
 RailsPushNotifications is an intuitive and easy to use gem that will allow you to easily add Push Notifications to your project.
 
 RailsPushNotifications key features:
@@ -21,7 +22,7 @@ The source code for that project is here: [https://github.com/calonso/rails_push
 ## Installation
 To install the gem simply add this line to your Gemfile
 
-    gem 'rails-push-notifications', '~> 0.2.0'
+    gem 'fcm-rails-push-notifications', '~> 0.2.4'
 
 and then install it by running
 
@@ -70,6 +71,14 @@ The only thing you need is the API_KEY that you will get from the Google APIS Co
 
 That's all. You have your applications' configurations stored in RailsPushNotification.
 
+### Android Applications setup using FCM
+
+The only thing you need is the API_KEY that you will get from the Google APIS Console for FCM
+
+    app = RailsPushNotifications::FCMApp.new
+    app.fcm_key = '<your app api key>'
+    app.save
+
 ### WindowsPhone Applications setup
 
 This case is similar but even simpler than APNS Apps
@@ -103,6 +112,17 @@ the destinations and the data format will vary, so for example
         'Your second destination token'
       ],
       data: { message: 'Hello GCM World!' }
+    )
+
+### FCM Notifications
+
+    app = <Your FCM app>
+    notification = app.notifications.create(
+      destinations: [
+        'Your first destination token',
+        'Your second destination token'
+      ],
+      data: { message: 'Hello FCM World!' }
     )
 
 ### WindowsPhone Notifications
@@ -142,7 +162,7 @@ to avoid bugs.
 
 ## Contributing
 
-1. Fork it ( https://github.com/calonso/rails-push-notifications/fork )
+1. Fork it ( https://github.com/santhums/rails-push-notifications/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
