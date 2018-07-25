@@ -19,5 +19,11 @@ class CreateRailsPushNotificationsApps < ActiveRecord::Migration
 
       t.timestamps null: false
     end
+
+    create_table :rails_push_notifications_fcm_apps do |t|
+      t.string :fcm_key
+
+      t.timestamps null: false
+    end
   end
 end
