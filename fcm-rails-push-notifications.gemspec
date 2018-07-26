@@ -23,7 +23,7 @@ Gem::Specification.new do |s|
   s.required_ruby_version = '>= 2.3.1'
 
   s.add_dependency 'rails', '>= 5.0'
-  s.add_dependency 'fcm-ruby-push-notifications', '>= 1.2.1'
+  s.add_dependency 'fcm-ruby-push-notifications', '>= 1.2.2'
 
   s.add_development_dependency 'sqlite3', '~> 1.3'
   s.add_development_dependency 'rspec', '~> 3.2'

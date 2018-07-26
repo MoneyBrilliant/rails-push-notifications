@@ -1,8 +1,8 @@
 PATH
   remote: .
   specs:
-    fcm-rails-push-notifications (0.2.3)
-      fcm-ruby-push-notifications (>= 1.2.1)
+    fcm-rails-push-notifications (0.2.4)
+      fcm-ruby-push-notifications (>= 1.2.2)
       rails (>= 5.0)
 
 GEM
@@ -68,7 +68,7 @@ GEM
     erubi (1.7.1)
     factory_girl (4.9.0)
       activesupport (>= 3.0.0)
-    fcm-ruby-push-notifications (1.2.1)
+    fcm-ruby-push-notifications (1.2.2)
       builder (~> 3.0)
       httparty
       json
